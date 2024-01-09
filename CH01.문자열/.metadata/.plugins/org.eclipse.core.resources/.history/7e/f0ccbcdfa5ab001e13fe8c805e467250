@@ -1,0 +1,73 @@
+// tell genie wish 1157
+import java.util.Scanner;
+
+public class tgw_BJ1157 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine(); // str 입력받는다
+		
+		// str각 자리마다 겹치는 수를
+		// 정수형 same 배열에 저장
+		int[] same = new int[str.length()];
+		for (int i = 0; i < str.length(); i++) {
+			int count = 0;
+			String ch1 = str.charAt(i) + "";
+			for (int j = 0; j < str.length(); j++) {
+				String ch2 = str.charAt(j) + "";
+				if (ch1.equalsIgnoreCase(ch2))
+					count++;
+			}
+			same[i] = count;
+		}
+		
+		// 겹치는 수 중 가장 큰 수 찾음
+		int max_value = same[0];
+		for (int i = 0; i < same.length; i++) {
+			if (max_value < same[i])
+				max_value = same[i];
+		}
+
+		// 높은 값에 해당하는 문자를
+		// 문자열 store배열에 저장 
+		// 이때 same_count++
+		int same_count = 0;
+		int j = 0;
+		String[] store = new String[same.length];
+		for (int i = 0; i < str.length(); i++) {
+			if (same[i] == max_value) {
+				store[j++] = str.charAt(i) + "";
+				same_count++;
+			}
+		}
+		
+		// same_count만큼 돌면서
+		// store에 저장된 문자와 비교
+		// 다 다르면 diff_count++
+		int diff_count = 0;
+		for (int i = 0; i < same_count; i++) {
+			j = 0;
+			while (store[i] != store[j] && j <= same_count) {
+				j++;
+			}
+			if (j-- == same_count)
+				diff_count++;
+		}
+		
+		if (diff_count == max_value)
+			System.out.println("?");
+		else {
+			for (int i = 0; i < same.length; i++) {
+				if (same[i] == max_value) {
+					System.out.println(str.toUpperCase().charAt(i));
+					break;
+				}
+			}
+		}
+		
+		sc.close();
+
+	}
+
+}

@@ -1,0 +1,17 @@
+// tell genie wish 1157
+import java.util.Scanner;
+
+public class tgw_BJ1157 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine(); // str 입력받는다
+		
+		str = str.toUpperCase().charAt(i);
+		
+		sc.close();
+
+	}
+
+}

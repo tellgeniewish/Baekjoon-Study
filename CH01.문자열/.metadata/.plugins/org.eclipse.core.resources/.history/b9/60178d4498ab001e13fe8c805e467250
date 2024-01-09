@@ -1,0 +1,55 @@
+// tell genie wish 1157
+import java.util.Scanner;
+
+public class tgw_BJ1157 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str;
+		str = sc.nextLine();
+		
+		int[] same = new int[str.length()];
+		for (int i = 0; i < str.length(); i++) {
+			
+		}
+		/*
+		int[] count = new int[str.length()];
+		for (int i = 0; i < str.length(); i++) {
+			count[i] = 
+		}
+		
+		
+		String[] store = new String[str.length()];
+		int[] count = new int[str.length()];
+		
+		int bestIndex = 0;
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if (i == 0) {
+				store[0] = ch;
+				count[0] = 0;
+				bestIndex = 0;
+			}
+			else {
+				if (store[i - 1].equalsIgnoreCase(ch)) {
+					count[i-1]++;
+				}
+			}
+			
+			if (bestIndex < count[i-1]) {
+				bestIndex = count[i-1];
+			}
+			
+		}
+		
+		if (Character.isLowerCase(str[bestIndex]))
+			System.out.print(Character.toLowerCase(ch));
+		else
+			System.out.print(Character.toUpperCase(ch));
+		*/
+		sc.close();
+
+	}
+
+}

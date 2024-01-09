@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\user\Desktop\J\DDWU\23-동계\스터디(with 고은, 윤지)\CH01.문자열\.metadata\.plugins\org.eclipse.jdt.core
+482351525.index
+2330634754.index
+1865797976.index
+623334914.index
+120394681.index

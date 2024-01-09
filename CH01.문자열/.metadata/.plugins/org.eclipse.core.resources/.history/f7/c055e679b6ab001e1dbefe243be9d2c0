@@ -1,0 +1,66 @@
+// tell genie wish 1157
+import java.util.Scanner;
+
+public class tgw_BJ1157 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine(); // str 입력받는다
+		
+		//str = str.toUpperCase();
+		
+		int[] same = new int[str.length()];
+        for (int i = 0; i < str.length(); i++) {
+            char ch1 = Character.toLowerCase(str.charAt(i));
+            for (int j = 0; j < str.length(); j++) {
+                char ch2 = Character.toLowerCase(str.charAt(j));
+                if (ch1 == ch2)
+                    same[i]++;
+            }
+        }
+
+        int maxCount = 0;
+        for (int i = 0; i < same.length; i++) {
+            maxCount = Math.max(maxCount, same[i]);
+        }
+
+        int sameCount = 0;
+        String[] store = new String[same.length];
+        for (int i = 0; i < str.length(); i++) {
+            if (same[i] == maxCount) {
+                store[sameCount++] = str.charAt(i) + "";
+            }
+        }
+
+        int[] diff_check = new int[sameCount];
+        for (int i = 0; i < sameCount; i++) {
+            for (int j = 0; j < sameCount; j++) {
+                if (i != j && !store[i].equalsIgnoreCase(store[j])) {
+                    diff_check[i]++;
+                }
+            }
+        }
+
+        int i = 0;
+        int j = 0;
+        while (j < diff_check.length && diff_check[i] == diff_check[j]) {
+            j++;
+        }
+
+        if (j == diff_check.length)
+            System.out.println("?");
+        else {
+            for (i = 0; i < same.length; i++) {
+                if (same[i] == maxCount) {
+                    System.out.println(str.charAt(i));
+                    break;
+                }
+            }
+        }
+		
+		sc.close();
+
+	}
+
+}

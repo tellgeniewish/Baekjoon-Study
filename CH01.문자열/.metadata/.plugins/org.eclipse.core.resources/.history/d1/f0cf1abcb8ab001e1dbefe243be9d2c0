@@ -1,0 +1,65 @@
+// tell genie wish 1157
+import java.util.Scanner;
+
+public class tgw_BJ1157 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine(); // str 입력받는다
+		
+		str = str.toUpperCase();
+		
+		int[] same = new int[26];
+		for (int i = 0; i < str.length(); i++) {
+		    char ch1 = str.charAt(i);
+		    for (int j = 0; j < str.length(); j++) {
+		        char ch2 = str.charAt(j);
+		        if (ch1 == ch2)
+		            same[i]++;
+		    }
+		    System.out.print(same[i]);
+		}
+		
+		int maxCount = 0;
+		for (int i = 0; i < same.length; i++) {
+		    maxCount = Math.max(maxCount, same[i]);
+		}
+		System.out.println("\nmax=" + maxCount);
+		
+		int index = 0;
+		char[] store = new char[26];
+		for (int i = 0; i < str.length(); i++) {
+		    if (same[i] == maxCount) {
+		        store[index++] = str.charAt(i);
+		    }
+		}
+		for (int i = 0; i < store.length; i++) {
+			System.out.print(store[i]);
+		}
+		System.out.println("\nindex=" + index);
+		
+		int sameCount = 0;
+		for (int i = 0; i < index; i++) {
+		    for (int j = 0; j < index; j++) {
+		        if (i != j && store[i] == store[j]) {
+		        	sameCount++;
+		            break;
+		        }
+		    }
+		}
+		System.out.println("\nsameCount=" + sameCount);
+		
+		if (sameCount > 0)
+		    System.out.println("?");
+		else {
+		    for (int i = 0; i < index; i++) {
+		        System.out.println(store[i]);
+		    }
+		}
+		
+		sc.close();
+
+	}
+
+}
