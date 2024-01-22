@@ -1,6 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main() {
     int w, h, p, q, t, x, y;
+    
     scanf("%d %d", &w, &h);
     scanf("%d %d", &p, &q);
     scanf("%d", &t);
