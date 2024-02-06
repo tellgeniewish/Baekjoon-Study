@@ -1,4 +1,4 @@
-// tell genie wish 1236 CH04.완전 탐색 - 시뮬레이션
+// tell genie wish 10250 CH04.완전 탐색 - 시뮬레이션
 import java.util.Scanner;
 
 public class Main {
