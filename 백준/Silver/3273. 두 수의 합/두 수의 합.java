@@ -1,4 +1,4 @@
-// tell genie wish 1236 CH03.배열
+// tell genie wish 3273 CH03.배열
 import java.util.Scanner;
 import java.util.Arrays;
 
